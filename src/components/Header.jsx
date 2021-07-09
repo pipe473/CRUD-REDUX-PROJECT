@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return ( 
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-info justify-content-between">
             <div className="container">
                 <h1>
                     <Link to={'/'} className="text-light">CRUD - React, Redux, REST API & Axios</Link>
@@ -11,7 +11,7 @@ const Header = () => {
             </div>
             <Link 
                 to={"/productos/nuevo/"}
-                className="btn btn-secondary new-post d-block d-md-inline-block"
+                className="btn btn-danger new-post d-block d-md-inline-block"
                 >Agregar un producto &#43;</Link>
         </nav>
      );

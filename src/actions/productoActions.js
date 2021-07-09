@@ -30,6 +30,7 @@ const agregarProduct_OK = product =>({
 
 // SI HUBO UN ERROR
 
-const agregarProducto_KO = () =>({
-
+const agregarProducto_KO = estado =>({
+    type: AGREGAR_PRODUCTO_ERROR,
+    payload: estado
 })

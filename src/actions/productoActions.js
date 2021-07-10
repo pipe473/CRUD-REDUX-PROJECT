@@ -66,10 +66,29 @@ const agregarProducto_KO = estado =>({
 export function obtenerProductos(){
     return async (dispatch) => {
         dispatch( descargarProductos() );
+
+        try {
+            const resp = await clienteAxios.get('/produc');
+            dispatch( productDownloaded_OK(resp.data) );
+            
+        } catch (error) {
+            console.log(error);            
+            dispatch( productDownloaded_KO() );
+        }
     }
 }
 
 const descargarProductos = () => ({
     type: COMENZAR_DESCARGA_PRODUCTOS,
     payload: true
-})
+});
+
+const productDownloaded_OK = products => ({
+    type: DESCARGA_PRODUCTOS_EXITO,
+    payload: products
+});
+
+const productDownloaded_KO = () => ({
+    type: DESCARGA_PRODUCTOS_ERROR,
+    payload: true
+});

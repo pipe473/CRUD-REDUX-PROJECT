@@ -8,7 +8,7 @@ import { createNewProductAction } from '../actions/productoActions';
 const Nuevo = ({history}) => {
 
     // STATE DEL COMPONENTE
-    const [producto, guardarProducto] = useState('');
+    const [nombre, guardarProducto] = useState('');
     const [precio, guardarPrecio] = useState(0);
 
     // UTILIZAR USEDIPATCH Y TE CREA UNA FUNCION
@@ -30,7 +30,7 @@ const Nuevo = ({history}) => {
 
 
             // VALIDAR FORMULARIO
-            if(producto.trim() === '' || precio <= 0 ){
+            if(nombre.trim() === '' || precio <= 0 ){
                 return;
             }
 
@@ -39,7 +39,7 @@ const Nuevo = ({history}) => {
 
             // CREAR EL NUEVO PRODUCTO
             agregarProduct({
-                producto,
+                nombre,
                 precio
             });
 
@@ -65,8 +65,8 @@ const Nuevo = ({history}) => {
                                     type="text"
                                     className="form-control"
                                     placeholder="Escribe tu nombre"
-                                    name="producto"
-                                    value={producto}
+                                    name="nombre_producto"
+                                    value={nombre}
                                     onChange={e => guardarProducto( e.target.value )}
                                     />
                             </div>

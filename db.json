@@ -44,6 +44,11 @@
       "producto": "Zumo de Mango",
       "precio": 10,
       "id": 9
+    },
+    {
+      "nombre": "pipas",
+      "precio": 2,
+      "id": 10
     }
   ]
 }
